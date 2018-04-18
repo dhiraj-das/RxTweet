@@ -6,7 +6,7 @@ target 'RxTweet' do
   use_frameworks!
 pod 'RxSwift',    '~> 4.0'
 pod 'Alamofire', '~> 4.7'
-
+pod 'RxCocoa',    '~> 4.0'
   # Pods for RxTweet
 
 end

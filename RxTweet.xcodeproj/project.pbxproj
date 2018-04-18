@@ -12,6 +12,7 @@
 		8B2D16E02087C83B003E6BEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2D16DE2087C83B003E6BEC /* Main.storyboard */; };
 		8B2D16E22087C83B003E6BEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B2D16E12087C83B003E6BEC /* Assets.xcassets */; };
 		8B2D16E52087C83B003E6BEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2D16E32087C83B003E6BEC /* LaunchScreen.storyboard */; };
+		F4A0810E475090BAC7DD7DBC /* Pods_RxTweet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C45ECA04175806EFB709640 /* Pods_RxTweet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		8B2D16E12087C83B003E6BEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B2D16E42087C83B003E6BEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B2D16E62087C83B003E6BEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C45ECA04175806EFB709640 /* Pods_RxTweet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxTweet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9940B27BF7A3F1719E4B2675 /* Pods-RxTweet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTweet.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxTweet/Pods-RxTweet.release.xcconfig"; sourceTree = "<group>"; };
+		B05163BAF581F918F8E4543D /* Pods-RxTweet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTweet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxTweet/Pods-RxTweet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4A0810E475090BAC7DD7DBC /* Pods_RxTweet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63CCDC5AB5809A7F3A940D2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C45ECA04175806EFB709640 /* Pods_RxTweet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8B2D16CE2087C83A003E6BEC = {
 			isa = PBXGroup;
 			children = (
 				8B2D16D92087C83B003E6BEC /* RxTweet */,
 				8B2D16D82087C83B003E6BEC /* Products */,
+				E1D9B319AE0649FB3FC59CF6 /* Pods */,
+				63CCDC5AB5809A7F3A940D2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = RxTweet;
 			sourceTree = "<group>";
 		};
+		E1D9B319AE0649FB3FC59CF6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B05163BAF581F918F8E4543D /* Pods-RxTweet.debug.xcconfig */,
+				9940B27BF7A3F1719E4B2675 /* Pods-RxTweet.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B2D16E92087C83B003E6BEC /* Build configuration list for PBXNativeTarget "RxTweet" */;
 			buildPhases = (
+				3982D47EEB4CB5FE1C7571FB /* [CP] Check Pods Manifest.lock */,
 				8B2D16D32087C83B003E6BEC /* Sources */,
 				8B2D16D42087C83B003E6BEC /* Frameworks */,
 				8B2D16D52087C83B003E6BEC /* Resources */,
+				6E2A2D261EE07B91F5B8FD3B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,6 +156,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3982D47EEB4CB5FE1C7571FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxTweet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E2A2D261EE07B91F5B8FD3B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RxTweet/Pods-RxTweet-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxTweet/Pods-RxTweet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8B2D16D32087C83B003E6BEC /* Sources */ = {
@@ -272,6 +339,7 @@
 		};
 		8B2D16EA2087C83B003E6BEC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B05163BAF581F918F8E4543D /* Pods-RxTweet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +354,7 @@
 		};
 		8B2D16EB2087C83B003E6BEC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9940B27BF7A3F1719E4B2675 /* Pods-RxTweet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -27,35 +27,28 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="65" id="gyf-85-Y7F">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="jZs-f0-jaD" detailTextLabel="hm1-3f-VFH" rowHeight="65" style="IBUITableViewCellStyleSubtitle" id="gyf-85-Y7F">
                                         <rect key="frame" x="0.0" y="72" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gyf-85-Y7F" id="lN5-Ns-JvS">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gmo-EI-QOk">
-                                                    <rect key="frame" x="8" y="12" width="359" height="19.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jZs-f0-jaD">
+                                                    <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6a7-7Z-wOF">
-                                                    <rect key="frame" x="8" y="37.5" width="359" height="13.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hm1-3f-VFH">
+                                                    <rect key="frame" x="15" y="35.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="6a7-7Z-wOF" secondAttribute="trailing" constant="8" id="HNt-w1-aPA"/>
-                                                <constraint firstAttribute="trailing" secondItem="Gmo-EI-QOk" secondAttribute="trailing" constant="8" id="RWK-dC-RZz"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6a7-7Z-wOF" secondAttribute="bottom" constant="12" id="RYj-hP-rXf"/>
-                                                <constraint firstItem="6a7-7Z-wOF" firstAttribute="leading" secondItem="lN5-Ns-JvS" secondAttribute="leading" constant="8" id="UVs-lN-Kug"/>
-                                                <constraint firstItem="Gmo-EI-QOk" firstAttribute="leading" secondItem="lN5-Ns-JvS" secondAttribute="leading" constant="8" id="jQS-KU-INi"/>
-                                                <constraint firstItem="Gmo-EI-QOk" firstAttribute="top" secondItem="lN5-Ns-JvS" secondAttribute="top" constant="12" id="qrZ-Wr-nPT"/>
-                                                <constraint firstItem="6a7-7Z-wOF" firstAttribute="top" secondItem="Gmo-EI-QOk" secondAttribute="bottom" constant="6" id="wOC-Qx-UEk"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -71,6 +64,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="oMw-bM-cJK"/>
+                    <connections>
+                        <outlet property="searchbar" destination="Uvh-ck-YeL" id="Ng7-wX-ZAM"/>
+                        <outlet property="tableView" destination="bpn-bR-ps0" id="PrM-AY-1gp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

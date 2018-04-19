@@ -10,14 +10,16 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchbar: UISearchBar!
+    
+    //var viewModel = SearchViewViewModel(service: <#T##SearchService#>)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        TwitterService.shared.fetchTweets(searchQuery: "tesla") { (tweets, error) in
+            print(tweets ?? error ?? "nothing printed")
+        }
     }
 
 

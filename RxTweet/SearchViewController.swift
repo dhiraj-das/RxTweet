@@ -7,21 +7,44 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SearchViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchbar: UISearchBar!
     
-    //var viewModel = SearchViewViewModel(service: <#T##SearchService#>)
+    private let bag = DisposeBag()
+    fileprivate var viewModel: SearchViewViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        TwitterService.shared.fetchTweets(searchQuery: "tesla") { (tweets, error) in
-            print(tweets ?? error ?? "nothing printed")
-        }
+        configureTableView()
+        viewModel = SearchViewViewModel(service: TwitterService())
+        bindUI()
     }
-
-
+    
+    func bindUI() {
+        
+            
+        
+        
+        
+//        viewModel.tweets
+//            .bindTo(tableView.rx.realmChanges(dataSource))
+//            .addDisposableTo(bag)
+//
+//        viewModel.loggedIn
+//            .drive(messageView.rx.isHidden)
+//            .addDisposableTo(bag)
+        
+        //show message when no account available
+    }
+    
+    private func configureTableView() {
+        tableView.estimatedRowHeight = 90
+        tableView.rowHeight = UITableViewAutomaticDimension
+    }
 }
 

@@ -16,13 +16,10 @@ enum APIError: Error {
 
 class TwitterService {
     
-    static let shared = TwitterService()
     static let kConsumerKey = "Wau2JpjqydnYVZKN2Oh4UbRD7"
     static let kConsumerSecretKey = "NN19rUTPs4yJbWktNcBl6dnBdmaoQj4mxYhfy72X6WthRZno2A"
     static let kTwitterAuthAPI = "https://api.twitter.com/oauth2/token"
     static let kTwitterSearchAPI = "https://api.twitter.com/1.1/search/tweets.json"
-    
-    private init() {}
     
     func fetchTweets(searchQuery: String, completion: @escaping ((_ tweets: [String]?, _ error: Error?) -> Void)) {
         fetchAuthToken { (token, error) in

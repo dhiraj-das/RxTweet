@@ -12,45 +12,56 @@ import RxCocoa
 
 class SearchViewController: UIViewController {
 
+    @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchbar: UISearchBar!
     
-    private let bag = DisposeBag()
-    fileprivate var viewModel: SearchViewViewModel!
+    private let disposeBag = DisposeBag()
+    private let apiService = TwitterService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        viewModel = SearchViewViewModel(service: TwitterService())
-        bindUI()
-    }
-    
-    func bindUI() {
-        let service = TwitterService()
-        service.fetchAuthToken()
-            .flatMap({ service.fetchTweets(token: $0, searchQuery: "tesla") })
-            .subscribe(onNext: { (tweets) in
-                print(tweets)
-            }, onError: { (error) in
-                print(error)
-            }).disposed(by: bag)
-        
-        
-        
-//        viewModel.tweets
-//            .bindTo(tableView.rx.realmChanges(dataSource))
-//            .addDisposableTo(bag)
-//
-//        viewModel.loggedIn
-//            .drive(messageView.rx.isHidden)
-//            .addDisposableTo(bag)
-        
-        //show message when no account available
+        configureTableDataSource()
     }
     
     private func configureTableView() {
         tableView.estimatedRowHeight = 90
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.tableFooterView = UIView(frame: .zero)
+        tableView.register(UINib.init(nibName: String(describing: TweetTableViewCell.self),
+                                      bundle: nil),
+                           forCellReuseIdentifier: String(describing: TweetTableViewCell.self))
+    }
+    
+    private func configureTableDataSource() {
+        let results = searchbar.rx.text.orEmpty
+            .asDriver()
+            .throttle(0.3)
+            .distinctUntilChanged()
+            .flatMapLatest { [unowned self] (query) in
+                self.apiService.fetchAuthToken()
+                    .observeOn(SchedulerHelper.backgroundWorkScheduler())
+                    .flatMap({ self.apiService.fetchTweets(token: $0, searchQuery: query) })
+                    .retry(3)
+                    .startWith([])
+                    .asDriver(onErrorJustReturn: [])
+            }
+            .map { (results) in
+                results.map(SearchResultViewModel.init)
+        }
+                
+        results
+            .drive(tableView.rx.items(cellIdentifier: String(describing: TweetTableViewCell.self),
+                                      cellType: TweetTableViewCell.self)) { (_, viewModel, cell) in
+                cell.viewModel = viewModel
+            }
+            .disposed(by: disposeBag)
+        
+        results
+            .map { $0.count != 0 }
+            .drive(self.emptyLabel.rx.isHidden)
+            .disposed(by: disposeBag)
     }
 }
 

@@ -84,7 +84,7 @@ class TwitterService {
                     switch response.result {
                     case .success(let value):
                         guard let json = value as? [String: Any] else {
-                            observer.onError(APIError.invalidURL)
+                            observer.onError(APIError.unknown)
                             return
                         }
                         

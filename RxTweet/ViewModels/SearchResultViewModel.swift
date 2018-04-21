@@ -14,13 +14,14 @@ class SearchResultViewModel {
     var tweetText: Driver<String>
     var createdDate: Driver<String>
     var personName: Driver<String>
-    //var profileImage: Driver<URL>
+    var profileImage: Driver<DownloadableImage>
     var tweet: Tweet
     
     init(tweet: Tweet) {
         self.tweet = tweet
         self.createdDate = Driver.never()
         self.tweetText = Driver.never()
+        self.profileImage = Driver.never()
         
         tweetText = Observable
             .just(tweet.text)
@@ -35,5 +36,14 @@ class SearchResultViewModel {
                 .just(DateFormatter.cellDateFormat().string(from: date))
                 .asDriver(onErrorJustReturn: "")
         }
+        fetchImage()
+    }
+    
+    private func fetchImage() {
+        let imageService = ImageService()
+        profileImage = imageService.imageFromURL(urlString: tweet.profileImageURL)
+                .map({ DownloadableImage.content(image: $0) })
+                .startWith(DownloadableImage.offlinePlaceholder)
+                .asDriver(onErrorJustReturn: DownloadableImage.offlinePlaceholder)
     }
 }

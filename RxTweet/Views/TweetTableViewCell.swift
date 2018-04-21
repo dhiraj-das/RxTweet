@@ -40,7 +40,17 @@ public class TweetTableViewCell: UITableViewCell {
                 .map(Optional.init)
                 .drive(self.createdDateLabel.rx.text)
                 .disposed(by: disposeBag!)
+            
+            _viewModel.profileImage
+                .drive(self.profileImageView.rx.downloadableImageAnimated(kCATransitionFade))
+                .disposed(by: disposeBag!)
         }
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        profileImageView.layer.cornerRadius = 8
+        profileImageView.clipsToBounds = true
     }
     
     override public func prepareForReuse() {

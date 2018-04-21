@@ -28,12 +28,12 @@ class SearchViewController: UIViewController {
     func bindUI() {
         let service = TwitterService()
         service.fetchAuthToken()
-            .subscribe(onNext: { (token) in
-                print(token)
+            .flatMap({ service.fetchTweets(token: $0, searchQuery: "tesla") })
+            .subscribe(onNext: { (tweets) in
+                print(tweets)
             }, onError: { (error) in
                 print(error)
-            })
-            .disposed(by: bag)
+            }).disposed(by: bag)
         
         
         

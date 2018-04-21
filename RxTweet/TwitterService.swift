@@ -26,7 +26,47 @@ class TwitterService {
     
     let disposeBag = DisposeBag()
     
-    func fetchTweets(searchQuery: String, completion: @escaping ((_ tweets: [String]?, _ error: Error?) -> Void)) {
+    func fetchTweets(token: String, searchQuery: String) -> Observable<[Tweet]> {
+        
+        if let searchAPI = URL(string: TwitterService.kTwitterSearchAPI) {
+            var headers = HTTPHeaders()
+            headers["Authorization"] = "Bearer " + token
+            var parameters = Parameters()
+            parameters["q"] = searchQuery
+            
+            let request = Alamofire.request(searchAPI,
+                                            method: .get,
+                                            parameters: parameters,
+                                            encoding: URLEncoding.default,
+                                            headers: headers)
+            
+            return Observable.create({ (observer) in
+                request.responseJSON(completionHandler: { (response) in
+                    switch response.result {
+                    case .success(let value):
+                        guard let json = value as? [String: Any] else {
+                            observer.onError(APIError.invalidURL)
+                            return
+                        }
+                        if let statuses = json["statuses"] as? [Any] {
+                            let tweets = statuses.flatMap({ Tweet(data: $0) })
+                            observer.onNext(tweets)
+                            observer.onCompleted()
+                            return
+                        }
+                        observer.onError(APIError.noToken)
+                        
+                    case .failure(let error):
+                        observer.onError(error)
+                    }
+                })
+                return Disposables.create()
+            })
+        }
+        return Observable.error(APIError.invalidURL)
+        
+        
+        
 //        fetchAuthToken { (token, error) in
 //            guard let _token = token, error == nil else {
 //                completion(nil, error)

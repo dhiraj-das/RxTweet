@@ -7,11 +7,14 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 import Alamofire
 
 enum APIError: Error {
     case invalidURL
     case unknown
+    case noToken
 }
 
 class TwitterService {
@@ -21,80 +24,87 @@ class TwitterService {
     static let kTwitterAuthAPI = "https://api.twitter.com/oauth2/token"
     static let kTwitterSearchAPI = "https://api.twitter.com/1.1/search/tweets.json"
     
+    let disposeBag = DisposeBag()
+    
     func fetchTweets(searchQuery: String, completion: @escaping ((_ tweets: [String]?, _ error: Error?) -> Void)) {
-        fetchAuthToken { (token, error) in
-            guard let _token = token, error == nil else {
-                completion(nil, error)
-                return
-            }
-            
-            guard let searchURL = URL(string: TwitterService.kTwitterSearchAPI) else {
-                completion(nil, APIError.invalidURL)
-                return
-            }
-            
+//        fetchAuthToken { (token, error) in
+//            guard let _token = token, error == nil else {
+//                completion(nil, error)
+//                return
+//            }
+//
+//            guard let searchURL = URL(string: TwitterService.kTwitterSearchAPI) else {
+//                completion(nil, APIError.invalidURL)
+//                return
+//            }
+//
+//            var headers = HTTPHeaders()
+//            headers["Authorization"] = "Bearer " + _token
+//            var parameters = Parameters()
+//            parameters["q"] = searchQuery
+//
+//            let request = Alamofire.request(searchURL,
+//                                            method: .get,
+//                                            parameters: parameters,
+//                                            encoding: URLEncoding.default,
+//                                            headers: headers)
+//            request.responseJSON { (response) in
+//                switch response.result {
+//                case .success:
+//                    guard let json = response.result.value as? [String: Any] else {
+//                        completion(nil, APIError.unknown)
+//                        return
+//                    }
+//
+//                    print(json)
+//                case .failure(let error):
+//                    completion(nil, error)
+//                }
+//            }
+//        }
+    }
+    
+    func fetchAuthToken() -> Observable<String> {
+        
+        if let authURL = URL(string: TwitterService.kTwitterAuthAPI) {
             var headers = HTTPHeaders()
-            headers["Authorization"] = "Bearer " + _token
+            headers["Authorization"] = "Basic " + base64EncodedTokenString()
             var parameters = Parameters()
-            parameters["q"] = searchQuery
-            
-            let request = Alamofire.request(searchURL,
-                                            method: .get,
+            parameters["grant_type"] = "client_credentials"
+
+            let request = Alamofire.request(authURL,
+                                            method: .post,
                                             parameters: parameters,
-                                            encoding: URLEncoding.default,
+                                            encoding: URLEncoding.httpBody,
                                             headers: headers)
-            request.responseJSON { (response) in
-                switch response.result {
-                case .success:
-                    guard let json = response.result.value as? [String: Any] else {
-                        completion(nil, APIError.unknown)
-                        return
-                    }
+            
+            return Observable.create({ (observer) in
+                request.responseJSON(completionHandler: { (response) in
+                    switch response.result {
+                    case .success(let value):
+                        guard let json = value as? [String: Any] else {
+                            observer.onError(APIError.invalidURL)
+                            return
+                        }
+                        
+                        if let token = json["access_token"] as? String {
+                            observer.onNext(token)
+                            observer.onCompleted()
+                            return
+                        }
+                        observer.onError(APIError.noToken)
                     
-                    print(json)
-                case .failure(let error):
-                    completion(nil, error)
-                }
-            }
+                    case .failure(let error):
+                        observer.onError(error)
+                    }
+                })
+                return Disposables.create()
+            })
         }
+        return Observable.error(APIError.invalidURL)
     }
     
-    func fetchAuthToken(completion: @escaping ((_ token: String?, _ error: Error?) -> Void)) {
-        guard let authURL = URL(string: TwitterService.kTwitterAuthAPI) else {
-            completion(nil, APIError.invalidURL)
-            return
-        }
-        
-        var headers = HTTPHeaders()
-        headers["Authorization"] = "Basic " + base64EncodedTokenString()
-        var parameters = Parameters()
-        parameters["grant_type"] = "client_credentials"
-        
-        let request = Alamofire.request(authURL,
-                                        method: .post,
-                                        parameters: parameters,
-                                        encoding: URLEncoding.httpBody,
-                                        headers: headers)
-        request.responseJSON { (response) in
-            switch response.result {
-            case .success:
-                guard let json = response.result.value as? [String: Any] else {
-                    completion(nil, APIError.unknown)
-                    return
-                }
-                
-                if let token = json["access_token"] as? String {
-                    completion(token, nil)
-                    return
-                }
-                completion(nil, APIError.unknown)
-            case .failure(let error):
-                completion(nil, error)
-            }
-        }
-    }
-    
-    private func base64EncodedTokenString() -> String {
+    func base64EncodedTokenString() -> String {
         let consumerKeyRFC1738 = TwitterService.kConsumerKey.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let consumerSecretRFC1738 = TwitterService.kConsumerSecretKey.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let concatenateKeyAndSecret = consumerKeyRFC1738! + ":" + consumerSecretRFC1738!

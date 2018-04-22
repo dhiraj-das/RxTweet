@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--RxTweet-->
         <scene sceneID="tne-QT-ifu">
@@ -44,7 +49,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oMw-bM-cJK"/>
+                    <navigationItem key="navigationItem" title="RxTweet" id="oMw-bM-cJK"/>
                     <connections>
                         <outlet property="emptyLabel" destination="1dX-SI-akP" id="RGB-YB-dKS"/>
                         <outlet property="searchbar" destination="Uvh-ck-YeL" id="Ng7-wX-ZAM"/>
@@ -54,6 +59,87 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="476" y="133.5832083958021"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="NOM-g7-lZX">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="RUO-em-m1P" customClass="ProfileViewController" customModule="RxTweet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WWn-YJ-YdD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Goi-Sc-Ogm">
+                                <rect key="frame" x="12" y="32" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="8vy-h2-vP0"/>
+                                    <constraint firstAttribute="width" constant="100" id="yAh-1x-W2r"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2C-nm-q04">
+                                <rect key="frame" x="124" y="32" width="239" height="34.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHI-mM-wJP">
+                                <rect key="frame" x="124" y="74" width="239" height="25"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohP-uw-Od1">
+                                <rect key="frame" x="12" y="152" width="351" height="25"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <color key="textColor" red="0.23921568630000001" green="0.71372549019999998" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSh-Kq-gQr">
+                                <rect key="frame" x="12" y="184.5" width="351" height="25"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOi-Ms-Q7B">
+                                <rect key="frame" x="12" y="217" width="351" height="29"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="U2C-nm-q04" firstAttribute="top" secondItem="Pwz-2J-Nq9" secondAttribute="top" constant="12" id="16p-NO-aPJ"/>
+                            <constraint firstItem="U2C-nm-q04" firstAttribute="leading" secondItem="Goi-Sc-Ogm" secondAttribute="trailing" constant="12" id="39L-Dq-Y2s"/>
+                            <constraint firstItem="Pwz-2J-Nq9" firstAttribute="trailing" secondItem="ohP-uw-Od1" secondAttribute="trailing" constant="12" id="5B2-0R-O6F"/>
+                            <constraint firstItem="Goi-Sc-Ogm" firstAttribute="leading" secondItem="Pwz-2J-Nq9" secondAttribute="leading" constant="12" id="98H-f7-Kf0"/>
+                            <constraint firstItem="bOi-Ms-Q7B" firstAttribute="top" secondItem="JSh-Kq-gQr" secondAttribute="bottom" constant="8" id="E6A-z5-TDJ"/>
+                            <constraint firstItem="ohP-uw-Od1" firstAttribute="top" secondItem="Goi-Sc-Ogm" secondAttribute="bottom" constant="20" id="G5V-be-Exb"/>
+                            <constraint firstItem="Goi-Sc-Ogm" firstAttribute="top" secondItem="Pwz-2J-Nq9" secondAttribute="top" constant="12" id="HFh-tT-JKD"/>
+                            <constraint firstItem="Pwz-2J-Nq9" firstAttribute="trailing" secondItem="U2C-nm-q04" secondAttribute="trailing" constant="12" id="Jlw-0C-ync"/>
+                            <constraint firstItem="JSh-Kq-gQr" firstAttribute="top" secondItem="ohP-uw-Od1" secondAttribute="bottom" constant="8" id="Kgs-xQ-9QU"/>
+                            <constraint firstItem="NHI-mM-wJP" firstAttribute="top" secondItem="U2C-nm-q04" secondAttribute="bottom" constant="8" id="QWy-Ja-WSv"/>
+                            <constraint firstItem="Pwz-2J-Nq9" firstAttribute="trailing" secondItem="NHI-mM-wJP" secondAttribute="trailing" constant="12" id="VPe-2U-c5O"/>
+                            <constraint firstItem="NHI-mM-wJP" firstAttribute="leading" secondItem="Goi-Sc-Ogm" secondAttribute="trailing" constant="12" id="WDV-1P-ITW"/>
+                            <constraint firstItem="Pwz-2J-Nq9" firstAttribute="trailing" secondItem="JSh-Kq-gQr" secondAttribute="trailing" constant="12" id="abg-u5-4lI"/>
+                            <constraint firstItem="bOi-Ms-Q7B" firstAttribute="leading" secondItem="Pwz-2J-Nq9" secondAttribute="leading" constant="12" id="gKr-g9-LXD"/>
+                            <constraint firstItem="JSh-Kq-gQr" firstAttribute="leading" secondItem="Pwz-2J-Nq9" secondAttribute="leading" constant="12" id="gma-Jc-Sja"/>
+                            <constraint firstItem="ohP-uw-Od1" firstAttribute="leading" secondItem="Pwz-2J-Nq9" secondAttribute="leading" constant="12" id="qV1-OJ-SQ6"/>
+                            <constraint firstItem="Pwz-2J-Nq9" firstAttribute="trailing" secondItem="bOi-Ms-Q7B" secondAttribute="trailing" constant="12" id="xlA-Pe-0oc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pwz-2J-Nq9"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="bOi-Ms-Q7B" id="pKW-Wy-Snb"/>
+                        <outlet property="handleLabel" destination="NHI-mM-wJP" id="4DP-te-rdO"/>
+                        <outlet property="imageView" destination="Goi-Sc-Ogm" id="vNV-0Z-Xsb"/>
+                        <outlet property="linkLabel" destination="ohP-uw-Od1" id="ykK-za-TeR"/>
+                        <outlet property="locationLabel" destination="JSh-Kq-gQr" id="Qrr-yB-EjM"/>
+                        <outlet property="profileNameLabel" destination="U2C-nm-q04" id="2Ob-eB-gfg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Eg-ob-AEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1321" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xO6-p9-4Nx">

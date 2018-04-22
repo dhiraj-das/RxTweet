@@ -23,6 +23,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         configureTableView()
         configureTableDataSource()
+        configureTableViewCellSelection()
     }
     
     private func configureTableView() {
@@ -50,17 +51,28 @@ class SearchViewController: UIViewController {
             .map { (results) in
                 results.map(SearchResultViewModel.init)
         }
-                
+        
         results
             .drive(tableView.rx.items(cellIdentifier: String(describing: TweetTableViewCell.self),
-                                      cellType: TweetTableViewCell.self)) { (_, viewModel, cell) in
-                cell.viewModel = viewModel
+                                      cellType: TweetTableViewCell.self)) { (row, viewModel, cell) in
+                                cell.viewModel = viewModel
             }
             .disposed(by: disposeBag)
-        
+
         results
             .map { $0.count != 0 }
             .drive(self.emptyLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+    }
+    
+    private func configureTableViewCellSelection() {
+        tableView.rx.modelSelected(SearchResultViewModel.self)
+            .subscribe(onNext: { [weak self] (searchResultViewModel) in
+                guard let profileViewController = self?.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else { return }
+                guard let user = searchResultViewModel.tweet.user else { return }
+                profileViewController.viewModel = ProfileViewModel(user: user)
+                self?.navigationController?.pushViewController(profileViewController, animated: true)
+            })
             .disposed(by: disposeBag)
     }
 }

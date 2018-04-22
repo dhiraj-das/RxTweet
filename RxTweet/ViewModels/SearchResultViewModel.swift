@@ -22,13 +22,14 @@ class SearchResultViewModel {
         self.createdDate = Driver.never()
         self.tweetText = Driver.never()
         self.profileImage = Driver.never()
+        self.personName = Driver.never()
         
         tweetText = Observable
             .just(tweet.text)
             .asDriver(onErrorJustReturn: "")
         
         personName = Observable
-            .just(tweet.name)
+            .just(tweet.user?.name ?? "")
             .asDriver(onErrorJustReturn: "")
         
         if let date = tweet.created {
@@ -41,7 +42,7 @@ class SearchResultViewModel {
     
     private func fetchImage() {
         let imageService = ImageService()
-        profileImage = imageService.imageFromURL(urlString: tweet.profileImageURL)
+        profileImage = imageService.imageFromURL(urlString: tweet.user?.profileImageURL ?? "")
                 .map({ DownloadableImage.content(image: $0) })
                 .startWith(DownloadableImage.offlinePlaceholder)
                 .asDriver(onErrorJustReturn: DownloadableImage.offlinePlaceholder)

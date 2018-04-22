@@ -13,9 +13,8 @@ class Tweet: Object {
     
     @objc dynamic var id: Int64 = 0
     @objc dynamic var text = ""
-    @objc dynamic var name = ""
     @objc dynamic var created: Date?
-    @objc dynamic var profileImageURL = ""
+    @objc dynamic var user: User?
     
     override static func primaryKey() -> String? {
         return "id"
@@ -28,9 +27,8 @@ class Tweet: Object {
         id = _data["id"] as? Int64 ?? 0
         text = _data["text"] as? String ?? ""
         
-        if let user = _data["user"] as? [String: Any] {
-            name = user["name"] as? String ?? ""
-            profileImageURL = user["profile_image_url"] as? String ?? ""
+        if let _user = _data["user"] as? [String: Any] {
+            user = User(data: _user)
         }
         
         if let date = _data["created_at"] as? String {

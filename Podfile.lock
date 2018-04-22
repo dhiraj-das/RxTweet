@@ -7,12 +7,22 @@ PODS:
     - Realm (= 3.3.1)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
+  - RxRealm (0.7.5):
+    - RealmSwift (~> 3.0)
+    - RxSwift (~> 4.0)
+  - RxRealmDataSources (0.2.9):
+    - RealmSwift (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxRealm (~> 0.7.3)
+    - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - RealmSwift
   - RxCocoa (~> 4.0)
+  - RxRealm
+  - RxRealmDataSources
   - RxSwift (~> 4.0)
 
 SPEC REPOS:
@@ -21,6 +31,8 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - RxCocoa
+    - RxRealm
+    - RxRealmDataSources
     - RxSwift
 
 SPEC CHECKSUMS:
@@ -28,8 +40,10 @@ SPEC CHECKSUMS:
   Realm: 63ebf4903b446b0bdf2131244eb1e1549925c724
   RealmSwift: f28fe8507bdfb8f1c924962401b83e7b9d7abb5c
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxRealm: a6c6c0a07cb61f34209969ca6657734edfdfff30
+  RxRealmDataSources: 798303f1d7db18d80da9e95bab9605010378040e
   RxSwift: e49536837d9901277638493ea537394d4b55f570
 
-PODFILE CHECKSUM: 1fd9447d4aa657c2844b8bce1bafa16621a26042
+PODFILE CHECKSUM: 864af7eb8ac15df66069ea326f8edb411c3aa840
 
 COCOAPODS: 1.5.0

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8B12A7C120890E56005A5C8E /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12A7C020890E56005A5C8E /* Tweet.swift */; };
+		8B1AA4A2208CC18C001E6A9D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1AA4A1208CC18C001E6A9D /* ProfileViewController.swift */; };
+		8B1AA4A4208CC800001E6A9D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1AA4A3208CC800001E6A9D /* ProfileViewModel.swift */; };
+		8B1AA4A6208CC831001E6A9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1AA4A5208CC831001E6A9D /* User.swift */; };
 		8B203E47208BA97400E891E0 /* SchedulerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B203E46208BA97400E891E0 /* SchedulerHelper.swift */; };
 		8B2D16DB2087C83B003E6BEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2D16DA2087C83B003E6BEC /* AppDelegate.swift */; };
 		8B2D16DD2087C83B003E6BEC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2D16DC2087C83B003E6BEC /* SearchViewController.swift */; };
@@ -26,6 +29,9 @@
 
 /* Begin PBXFileReference section */
 		8B12A7C020890E56005A5C8E /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		8B1AA4A1208CC18C001E6A9D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8B1AA4A3208CC800001E6A9D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		8B1AA4A5208CC831001E6A9D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8B203E46208BA97400E891E0 /* SchedulerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerHelper.swift; sourceTree = "<group>"; };
 		8B2D16D72087C83B003E6BEC /* RxTweet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxTweet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B2D16DA2087C83B003E6BEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +110,7 @@
 				8B2D16F52088D188003E6BEC /* DataModels */,
 				8B2D16DA2087C83B003E6BEC /* AppDelegate.swift */,
 				8B2D16DC2087C83B003E6BEC /* SearchViewController.swift */,
+				8B1AA4A1208CC18C001E6A9D /* ProfileViewController.swift */,
 				8B2D16DE2087C83B003E6BEC /* Main.storyboard */,
 				8B2D16E12087C83B003E6BEC /* Assets.xcassets */,
 				8B2D16E32087C83B003E6BEC /* LaunchScreen.storyboard */,
@@ -116,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				8B12A7C020890E56005A5C8E /* Tweet.swift */,
+				8B1AA4A5208CC831001E6A9D /* User.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -150,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				8B2D16F12088CEB9003E6BEC /* SearchResultViewModel.swift */,
+				8B1AA4A3208CC800001E6A9D /* ProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -263,6 +272,8 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealmDataSources/RxRealmDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -271,6 +282,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealmDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,12 +298,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B1AA4A6208CC831001E6A9D /* User.swift in Sources */,
 				8BFA8D06208BE46000568BE9 /* UIImageView+DownloadableImage.swift in Sources */,
 				8B2D16DD2087C83B003E6BEC /* SearchViewController.swift in Sources */,
 				8B203E47208BA97400E891E0 /* SchedulerHelper.swift in Sources */,
 				8BFA8D04208BDC2700568BE9 /* ImageService.swift in Sources */,
 				8B12A7C120890E56005A5C8E /* Tweet.swift in Sources */,
 				8B2D16F42088CF9D003E6BEC /* TwitterService.swift in Sources */,
+				8B1AA4A4208CC800001E6A9D /* ProfileViewModel.swift in Sources */,
+				8B1AA4A2208CC18C001E6A9D /* ProfileViewController.swift in Sources */,
 				8B2D16DB2087C83B003E6BEC /* AppDelegate.swift in Sources */,
 				8B2D16F22088CEB9003E6BEC /* SearchResultViewModel.swift in Sources */,
 				8BFA8CFB208BCC1700568BE9 /* Dateformatter+Extensions.swift in Sources */,

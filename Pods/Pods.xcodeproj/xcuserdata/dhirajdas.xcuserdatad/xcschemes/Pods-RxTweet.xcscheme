@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D5BEBA6A39C892DA4A7FCCFC9603743"
-               BuildableName = "Pods_RxTweetAbstract_RxTweet.framework"
-               BlueprintName = "Pods-RxTweetAbstract-RxTweet"
+               BlueprintIdentifier = "53B5D8989EE67A711B2BC6453FBDCBB9"
+               BuildableName = "Pods_RxTweet.framework"
+               BlueprintName = "Pods-RxTweet"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D5BEBA6A39C892DA4A7FCCFC9603743"
-            BuildableName = "Pods_RxTweetAbstract_RxTweet.framework"
-            BlueprintName = "Pods-RxTweetAbstract-RxTweet"
+            BlueprintIdentifier = "53B5D8989EE67A711B2BC6453FBDCBB9"
+            BuildableName = "Pods_RxTweet.framework"
+            BlueprintName = "Pods-RxTweet"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

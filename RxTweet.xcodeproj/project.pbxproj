@@ -14,7 +14,6 @@
 		8B203E47208BA97400E891E0 /* SchedulerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B203E46208BA97400E891E0 /* SchedulerHelper.swift */; };
 		8B2819D5208E1DEC00A254D4 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2819D4208E1DEC00A254D4 /* Navigator.swift */; };
 		8B2819D7208E1FC300A254D4 /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2819D6208E1FC300A254D4 /* UIStoryboard+Extensions.swift */; };
-		8B2819DF208E2B7000A254D4 /* RxTweetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2819DE208E2B7000A254D4 /* RxTweetTests.swift */; };
 		8B2D16DB2087C83B003E6BEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2D16DA2087C83B003E6BEC /* AppDelegate.swift */; };
 		8B2D16DD2087C83B003E6BEC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2D16DC2087C83B003E6BEC /* SearchViewController.swift */; };
 		8B2D16E02087C83B003E6BEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2D16DE2087C83B003E6BEC /* Main.storyboard */; };
@@ -30,21 +29,7 @@
 		F4A0810E475090BAC7DD7DBC /* Pods_RxTweet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C45ECA04175806EFB709640 /* Pods_RxTweet.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		8B2819E1208E2B7000A254D4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8B2D16CF2087C83A003E6BEC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8B2D16D62087C83B003E6BEC;
-			remoteInfo = RxTweet;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		1ABBAD4E45C2F3CA76EEAF92 /* Pods_RxTweetAbstract_RxTweet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxTweetAbstract_RxTweet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B8C1782DCAFA81D5A10DEA3 /* Pods-RxAbstract-RxTweet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxAbstract-RxTweet.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxAbstract-RxTweet/Pods-RxAbstract-RxTweet.release.xcconfig"; sourceTree = "<group>"; };
-		73DD5B5770CCE4723D3E11B4 /* Pods-RxTweetAbstract-RxTweet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTweetAbstract-RxTweet.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxTweetAbstract-RxTweet/Pods-RxTweetAbstract-RxTweet.release.xcconfig"; sourceTree = "<group>"; };
-		833BE0082CC05AFC009B57FB /* Pods-RxAbstract-RxTweet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxAbstract-RxTweet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxAbstract-RxTweet/Pods-RxAbstract-RxTweet.debug.xcconfig"; sourceTree = "<group>"; };
 		8B12A7C020890E56005A5C8E /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		8B1AA4A1208CC18C001E6A9D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8B1AA4A3208CC800001E6A9D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -52,9 +37,6 @@
 		8B203E46208BA97400E891E0 /* SchedulerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerHelper.swift; sourceTree = "<group>"; };
 		8B2819D4208E1DEC00A254D4 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		8B2819D6208E1FC300A254D4 /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
-		8B2819DC208E2B7000A254D4 /* RxTweetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxTweetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B2819DE208E2B7000A254D4 /* RxTweetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTweetTests.swift; sourceTree = "<group>"; };
-		8B2819E0208E2B7000A254D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B2D16D72087C83B003E6BEC /* RxTweet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxTweet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B2D16DA2087C83B003E6BEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B2D16DC2087C83B003E6BEC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -71,19 +53,10 @@
 		8BFA8D05208BE46000568BE9 /* UIImageView+DownloadableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadableImage.swift"; sourceTree = "<group>"; };
 		8C45ECA04175806EFB709640 /* Pods_RxTweet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxTweet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9940B27BF7A3F1719E4B2675 /* Pods-RxTweet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTweet.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxTweet/Pods-RxTweet.release.xcconfig"; sourceTree = "<group>"; };
-		A9D235823F5B070397FB2B14 /* Pods-RxTweetAbstract-RxTweet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTweetAbstract-RxTweet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxTweetAbstract-RxTweet/Pods-RxTweetAbstract-RxTweet.debug.xcconfig"; sourceTree = "<group>"; };
 		B05163BAF581F918F8E4543D /* Pods-RxTweet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTweet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxTweet/Pods-RxTweet.debug.xcconfig"; sourceTree = "<group>"; };
-		F46FAC3D2F7F7040E7D8962E /* Pods_RxAbstract_RxTweet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxAbstract_RxTweet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8B2819D9208E2B7000A254D4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8B2D16D42087C83B003E6BEC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -99,8 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				8C45ECA04175806EFB709640 /* Pods_RxTweet.framework */,
-				F46FAC3D2F7F7040E7D8962E /* Pods_RxAbstract_RxTweet.framework */,
-				1ABBAD4E45C2F3CA76EEAF92 /* Pods_RxTweetAbstract_RxTweet.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,20 +85,10 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		8B2819DD208E2B7000A254D4 /* RxTweetTests */ = {
-			isa = PBXGroup;
-			children = (
-				8B2819DE208E2B7000A254D4 /* RxTweetTests.swift */,
-				8B2819E0208E2B7000A254D4 /* Info.plist */,
-			);
-			path = RxTweetTests;
-			sourceTree = "<group>";
-		};
 		8B2D16CE2087C83A003E6BEC = {
 			isa = PBXGroup;
 			children = (
 				8B2D16D92087C83B003E6BEC /* RxTweet */,
-				8B2819DD208E2B7000A254D4 /* RxTweetTests */,
 				8B2D16D82087C83B003E6BEC /* Products */,
 				E1D9B319AE0649FB3FC59CF6 /* Pods */,
 				63CCDC5AB5809A7F3A940D2E /* Frameworks */,
@@ -138,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				8B2D16D72087C83B003E6BEC /* RxTweet.app */,
-				8B2819DC208E2B7000A254D4 /* RxTweetTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,10 +174,6 @@
 			children = (
 				B05163BAF581F918F8E4543D /* Pods-RxTweet.debug.xcconfig */,
 				9940B27BF7A3F1719E4B2675 /* Pods-RxTweet.release.xcconfig */,
-				833BE0082CC05AFC009B57FB /* Pods-RxAbstract-RxTweet.debug.xcconfig */,
-				4B8C1782DCAFA81D5A10DEA3 /* Pods-RxAbstract-RxTweet.release.xcconfig */,
-				A9D235823F5B070397FB2B14 /* Pods-RxTweetAbstract-RxTweet.debug.xcconfig */,
-				73DD5B5770CCE4723D3E11B4 /* Pods-RxTweetAbstract-RxTweet.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -225,24 +181,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8B2819DB208E2B7000A254D4 /* RxTweetTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8B2819E3208E2B7000A254D4 /* Build configuration list for PBXNativeTarget "RxTweetTests" */;
-			buildPhases = (
-				8B2819D8208E2B7000A254D4 /* Sources */,
-				8B2819D9208E2B7000A254D4 /* Frameworks */,
-				8B2819DA208E2B7000A254D4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8B2819E2208E2B7000A254D4 /* PBXTargetDependency */,
-			);
-			name = RxTweetTests;
-			productName = RxTweetTests;
-			productReference = 8B2819DC208E2B7000A254D4 /* RxTweetTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		8B2D16D62087C83B003E6BEC /* RxTweet */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B2D16E92087C83B003E6BEC /* Build configuration list for PBXNativeTarget "RxTweet" */;
@@ -272,11 +210,6 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Dhiraj Das";
 				TargetAttributes = {
-					8B2819DB208E2B7000A254D4 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 8B2D16D62087C83B003E6BEC;
-					};
 					8B2D16D62087C83B003E6BEC = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -297,19 +230,11 @@
 			projectRoot = "";
 			targets = (
 				8B2D16D62087C83B003E6BEC /* RxTweet */,
-				8B2819DB208E2B7000A254D4 /* RxTweetTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8B2819DA208E2B7000A254D4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8B2D16D52087C83B003E6BEC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -335,7 +260,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RxTweetAbstract-RxTweet-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RxTweet-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -348,7 +273,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RxTweetAbstract-RxTweet/Pods-RxTweetAbstract-RxTweet-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-RxTweet/Pods-RxTweet-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -369,20 +294,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxTweetAbstract-RxTweet/Pods-RxTweetAbstract-RxTweet-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxTweet/Pods-RxTweet-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8B2819D8208E2B7000A254D4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8B2819DF208E2B7000A254D4 /* RxTweetTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8B2D16D32087C83B003E6BEC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -407,14 +324,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		8B2819E2208E2B7000A254D4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8B2D16D62087C83B003E6BEC /* RxTweet */;
-			targetProxy = 8B2819E1208E2B7000A254D4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		8B2D16DE2087C83B003E6BEC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -435,36 +344,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		8B2819E4208E2B7000A254D4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = RxTweetTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dhirajdas.RxTweetTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxTweet.app/RxTweet";
-			};
-			name = Debug;
-		};
-		8B2819E5208E2B7000A254D4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = RxTweetTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dhirajdas.RxTweetTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxTweet.app/RxTweet";
-			};
-			name = Release;
-		};
 		8B2D16E72087C83B003E6BEC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -574,7 +453,7 @@
 		};
 		8B2D16EA2087C83B003E6BEC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9D235823F5B070397FB2B14 /* Pods-RxTweetAbstract-RxTweet.debug.xcconfig */;
+			baseConfigurationReference = B05163BAF581F918F8E4543D /* Pods-RxTweet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -589,7 +468,7 @@
 		};
 		8B2D16EB2087C83B003E6BEC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73DD5B5770CCE4723D3E11B4 /* Pods-RxTweetAbstract-RxTweet.release.xcconfig */;
+			baseConfigurationReference = 9940B27BF7A3F1719E4B2675 /* Pods-RxTweet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -605,15 +484,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8B2819E3208E2B7000A254D4 /* Build configuration list for PBXNativeTarget "RxTweetTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8B2819E4208E2B7000A254D4 /* Debug */,
-				8B2819E5208E2B7000A254D4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		8B2D16D22087C83B003E6BEC /* Build configuration list for PBXProject "RxTweet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

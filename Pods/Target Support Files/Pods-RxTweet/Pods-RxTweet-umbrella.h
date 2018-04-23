@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_RxTweetAbstract_RxTweetVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_RxTweetAbstract_RxTweetVersionString[];
+FOUNDATION_EXPORT double Pods_RxTweetVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_RxTweetVersionString[];
 

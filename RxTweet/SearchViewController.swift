@@ -18,6 +18,7 @@ class SearchViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     private let apiService = TwitterService()
+    private let navigator = Navigator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,11 +68,9 @@ class SearchViewController: UIViewController {
     
     private func configureTableViewCellSelection() {
         tableView.rx.modelSelected(SearchResultViewModel.self)
-            .subscribe(onNext: { [weak self] (searchResultViewModel) in
-                guard let profileViewController = self?.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else { return }
+            .subscribe(onNext: { [unowned self] (searchResultViewModel) in
                 guard let user = searchResultViewModel.tweet.user else { return }
-                profileViewController.viewModel = ProfileViewModel(user: user)
-                self?.navigationController?.pushViewController(profileViewController, animated: true)
+                self.navigator.show(segue: .profile(user: user), sender: self)
             })
             .disposed(by: disposeBag)
     }

@@ -19,8 +19,16 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    var disposeBag = DisposeBag()
-    var viewModel: ProfileViewModel?
+    private var disposeBag = DisposeBag()
+    private var viewModel: ProfileViewModel!
+    private var navigator: Navigator!
+    
+    static func createWith(navigator: Navigator, storyboard: UIStoryboard, viewModel: ProfileViewModel) -> ProfileViewController {
+        let viewController = storyboard.instantiateViewController(ofType: ProfileViewController.self)
+        viewController.navigator = navigator
+        viewController.viewModel = viewModel
+        return viewController
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -12,6 +12,8 @@
 		8B1AA4A4208CC800001E6A9D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1AA4A3208CC800001E6A9D /* ProfileViewModel.swift */; };
 		8B1AA4A6208CC831001E6A9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1AA4A5208CC831001E6A9D /* User.swift */; };
 		8B203E47208BA97400E891E0 /* SchedulerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B203E46208BA97400E891E0 /* SchedulerHelper.swift */; };
+		8B2819D5208E1DEC00A254D4 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2819D4208E1DEC00A254D4 /* Navigator.swift */; };
+		8B2819D7208E1FC300A254D4 /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2819D6208E1FC300A254D4 /* UIStoryboard+Extensions.swift */; };
 		8B2D16DB2087C83B003E6BEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2D16DA2087C83B003E6BEC /* AppDelegate.swift */; };
 		8B2D16DD2087C83B003E6BEC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2D16DC2087C83B003E6BEC /* SearchViewController.swift */; };
 		8B2D16E02087C83B003E6BEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2D16DE2087C83B003E6BEC /* Main.storyboard */; };
@@ -33,6 +35,8 @@
 		8B1AA4A3208CC800001E6A9D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8B1AA4A5208CC831001E6A9D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8B203E46208BA97400E891E0 /* SchedulerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerHelper.swift; sourceTree = "<group>"; };
+		8B2819D4208E1DEC00A254D4 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		8B2819D6208E1FC300A254D4 /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 		8B2D16D72087C83B003E6BEC /* RxTweet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxTweet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B2D16DA2087C83B003E6BEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B2D16DC2087C83B003E6BEC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				8B2D16DA2087C83B003E6BEC /* AppDelegate.swift */,
 				8B2D16DC2087C83B003E6BEC /* SearchViewController.swift */,
 				8B1AA4A1208CC18C001E6A9D /* ProfileViewController.swift */,
+				8B2819D4208E1DEC00A254D4 /* Navigator.swift */,
 				8B2D16DE2087C83B003E6BEC /* Main.storyboard */,
 				8B2D16E12087C83B003E6BEC /* Assets.xcassets */,
 				8B2D16E32087C83B003E6BEC /* LaunchScreen.storyboard */,
@@ -133,6 +138,7 @@
 			children = (
 				8BFA8CFA208BCC1700568BE9 /* Dateformatter+Extensions.swift */,
 				8BFA8D05208BE46000568BE9 /* UIImageView+DownloadableImage.swift */,
+				8B2819D6208E1FC300A254D4 /* UIStoryboard+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -305,10 +311,12 @@
 				8BFA8D04208BDC2700568BE9 /* ImageService.swift in Sources */,
 				8B12A7C120890E56005A5C8E /* Tweet.swift in Sources */,
 				8B2D16F42088CF9D003E6BEC /* TwitterService.swift in Sources */,
+				8B2819D5208E1DEC00A254D4 /* Navigator.swift in Sources */,
 				8B1AA4A4208CC800001E6A9D /* ProfileViewModel.swift in Sources */,
 				8B1AA4A2208CC18C001E6A9D /* ProfileViewController.swift in Sources */,
 				8B2D16DB2087C83B003E6BEC /* AppDelegate.swift in Sources */,
 				8B2D16F22088CEB9003E6BEC /* SearchResultViewModel.swift in Sources */,
+				8B2819D7208E1FC300A254D4 /* UIStoryboard+Extensions.swift in Sources */,
 				8BFA8CFB208BCC1700568BE9 /* Dateformatter+Extensions.swift in Sources */,
 				8BFA8CFE208BD26700568BE9 /* TweetTableViewCell.swift in Sources */,
 			);
